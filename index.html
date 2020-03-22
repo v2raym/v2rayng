@@ -67,13 +67,16 @@
         var isAlipay = ua.indexOf('alipayclient') != -1;
         if (isWeixin ||isAlipay ) {
             ele.onclick = function(e) {
+                console.log("true",isWeixin,isAlipay);
                 window.event ? window.event.returnValue = false : e.preventDefault();
                 document.getElementById('uaTip').style.display = 'block';
             }
         }else{
             ele.click(function() {
+                console.log("false", ele.attr("style"));
                 ele.attr("style", "display:none;");
                 $("#id").attr("style", "display:block;");
+                console.log("false-", ele.attr("style"));
             });
         }
     }
