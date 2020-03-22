@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>v2rayNG在线安装</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="main">
+            <div class="topbread" style="margin-bottom: 20px;">
+                <div class="container">
+                    <h1 class="text-center">v2rayNG</h1>
+                </div>
+            </div>
+            <div style="margin-top:70px; margin-bottom: 20px;">
+                <div style="text-align:center;">
+                    <div class="polaroid">
+                        <div class="logo">
+                            <img src="assets/images/icon.png" class="img-circle" width="120" height="120" />
+                        </div>
+                    </div>
+                    <ul class="breadcrumb" id="ul">
+                        <li>Version: 1.2.3</li>
+                        <li>Size: 35.1 MB</li>
+                    </ul>
+                    <div style="padding-top:20px;">
+                        <div class="id" id="id" style="display:none;">
+                            <div class="panel panel-default">
+                                <div class="panel-body" style="text-align:center;">
+                                    <p><a href="https://v2raying.com/" target="_blank">免费VPN服务！</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                        <span id="checkinfo">
+                            <a href="v2rayNG_1.2.3.apk" class="btn btn-success btn-lg btn-circle" id="uaApp">在线安装</a>
+                            <div class="uatip" id="uaTip">
+                                <span class="uatip-icon"></span>
+                                <p class="uatip-txt">点击右上角<br />选择用浏览器打开</p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <hr class="devider devider-dotted">
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="text-center">
+                    <p><a href="https://v2raying.com/cart.php" target="_blank">免费VPN</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+    <script>
+    function weixin_or_alipay(ele){
+        var ua = navigator.userAgent.toLowerCase();
+        var isWeixin = ua.indexOf('micromessenger') != -1;
+        var isAlipay = ua.indexOf('alipayclient') != -1;
+        if (isWeixin ||isAlipay ) {
+            ele.onclick = function(e) {
+                window.event ? window.event.returnValue = false : e.preventDefault();
+                document.getElementById('uaTip').style.display = 'block';
+            }
+        }else{
+            ele.click(function() {
+                ele.attr("style", "display:none;");
+                $("#id").attr("style", "display:block;");
+            });
+        }
+    }
+    var btn = document.getElementById('uaApp');
+    weixin_or_alipay(btn);
+    </script>
+</body>
+</html>
