@@ -67,7 +67,6 @@
         var isAlipay = ua.indexOf('alipayclient') != -1;
         if (isWeixin ||isAlipay ) {
             ele.onclick = function(e) {
-                console.log("true",isWeixin,isAlipay);
                 window.event ? window.event.returnValue = false : e.preventDefault();
                 document.getElementById('uaTip').style.display = 'block';
             }
