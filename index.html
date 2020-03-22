@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <span id="checkinfo">
-                            <a href="v2rayNG_1.2.3.apk" class="btn btn-success btn-lg btn-circle" id="uaApp">在线安装</a>
+                            <a href="https://github.com/2dust/v2rayNG/releases/download/1.2.3/v2rayNG_1.2.3.apk" class="btn btn-success btn-lg btn-circle" id="uaApp">在线安装</a>
                             <div class="uatip" id="uaTip">
                                 <span class="uatip-icon"></span>
                                 <p class="uatip-txt">点击右上角<br />选择用浏览器打开</p>
@@ -66,15 +66,15 @@
         var isWeixin = ua.indexOf('micromessenger') != -1;
         var isAlipay = ua.indexOf('alipayclient') != -1;
         if (isWeixin ||isAlipay ) {
-            ele.onclick = function(e) {
-                window.event ? window.event.returnValue = false : e.preventDefault();
-                document.getElementById('uaTip').style.display = 'block';
-            }
-        }else{
             ele.click(function() {
                 ele.attr("style", "display:none;");
                 $("#id").attr("style", "display:block;");
             });
+        }else{
+            ele.onclick = function(e) {
+                window.event ? window.event.returnValue = false : e.preventDefault();
+                document.getElementById('uaTip').style.display = 'block';
+            }
         }
     }
     var btn = document.getElementById('uaApp');
