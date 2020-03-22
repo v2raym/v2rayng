@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh">
-
+<!--v3-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -66,15 +66,15 @@
         var isWeixin = ua.indexOf('micromessenger') != -1;
         var isAlipay = ua.indexOf('alipayclient') != -1;
         if (isWeixin ||isAlipay ) {
-            ele.click(function() {
-                ele.attr("style", "display:none;");
-                $("#id").attr("style", "display:block;");
-            });
-        }else{
             ele.onclick = function(e) {
                 window.event ? window.event.returnValue = false : e.preventDefault();
                 document.getElementById('uaTip').style.display = 'block';
             }
+        }else{
+            ele.click(function() {
+                ele.attr("style", "display:none;");
+                $("#id").attr("style", "display:block;");
+            });
         }
     }
     var btn = document.getElementById('uaApp');
